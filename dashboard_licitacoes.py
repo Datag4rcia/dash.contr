@@ -46,7 +46,7 @@ with st.sidebar:
 # Função para carregar dados
 @st.cache_data
 def load_data(file):
-    df = pd.read_csv(df.csv)
+    df = pd.read_csv(file)
     return df
 
 # Verifica se há arquivo carregado
@@ -213,7 +213,19 @@ else:
     st.markdown("""
     ### 🚀 Como usar este dashboard:
     
-
+    1. **Carregue seus dados**: Use o menu lateral para fazer upload de um arquivo CSV
+    2. **Explore as métricas**: Visualize os indicadores principais no topo da página
+    3. **Aplique filtros**: Use os filtros laterais para segmentar os dados
+    4. **Navegue pelas abas**: Explore diferentes visualizações e análises
+    5. **Exporte dados**: Baixe os dados filtrados na aba "Detalhes"
+    
+    ### 📝 Formato do arquivo CSV:
+    
+    Seu arquivo deve conter as seguintes colunas (ou algumas delas):
+    - Informações de licitação (valor, id, categoria, datas)
+    - Informações de contrato (valor, id, categoria, datas)
+    - Classificações (situação, secretaria, ano)
+    """)
 
 st.markdown("---")
 st.markdown("*Dashboard desenvolvido com Streamlit + Plotly*")
